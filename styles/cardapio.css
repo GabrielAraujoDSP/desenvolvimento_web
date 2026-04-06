@@ -1,0 +1,7 @@
+.cardapio {
+    background-color: var(--bege_escuro-background_2);
+}
+
+.cardapio__texto {
+    color: var(--texto-verde);
+}

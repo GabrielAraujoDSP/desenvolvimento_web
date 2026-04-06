@@ -1,0 +1,56 @@
+.footer {
+    background-color: var(--vermelho-principal);
+}
+
+
+
+.footer_superior {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+
+.footer_superior__logo {
+    margin-left: 6em;
+}
+
+.footer_superior__logo img{
+    width: 6em;
+}
+
+.footer_superior__logo p {
+    font-size: 1.46rem;
+    font-weight: 400;
+    color: var(--texto-branco);
+}
+
+.footer__superior__informacoes {
+    display: flex;
+    flex-direction: column;
+    color: var(--texto-branco);
+    gap: 1em;
+}
+
+.footer__superior__contatos {
+    display: flex;
+    gap: 1em;
+    margin-right: 5em;
+}
+
+.footer__superior__contatos img {
+    width: 3.5em;
+}
+
+
+.footer_infeior {
+    background-color: var(--vermelho-secundario);
+}
+
+.footer_infeior h3 {
+    color: var(--texto-branco);
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    padding: 1.3em;
+}
+
