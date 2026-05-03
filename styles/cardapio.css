@@ -5,3 +5,11 @@
 .cardapio__texto {
     color: var(--texto-verde);
 }
+
+.pizza-especiais {
+    background-color: var(--bege_escuro-background_2);
+}
+
+.texto__pizza-especiais {
+    color: var(--texto-verde);
+}
