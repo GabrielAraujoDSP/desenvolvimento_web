@@ -1,3 +1,202 @@
+.banner {
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* CAIXA DE ATENDIMENTO */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f5f1eb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contato-topo{
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    margin: -120px auto 50px auto;
+
+    background-color: #111;
+
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+    padding: 40px;
+
+    color: white;
+}
+
+/* WHATSAPP */
+
+.contato-topo__whatsapp{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+
+    flex: 1;
+}
+
+.whatsapp__icone{
+    min-width: 120px;
+    height: 120px;
+
+    background-color: #25d366;
+
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatsapp__icone img{
+    width: 70px;
+}
+
+.whatsapp__texto span{
+    color: #5cff8d;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.whatsapp__texto h2{
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.whatsapp__texto p{
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.botao-whatsapp{
+    background-color: #25d366;
+
+    color: white;
+    text-decoration: none;
+
+    padding: 15px 30px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    display: inline-block;
+
+    transition: 0.3s;
+}
+
+.botao-whatsapp:hover{
+    transform: scale(1.03);
+}
+
+/* HORÁRIO */
+
+.contato-topo__horario{
+    flex: 1;
+
+    border-left: 1px solid #2a2a2a;
+
+    padding-left: 40px;
+}
+
+.horario__titulo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.horario__icone{
+    width: 20px;
+    height: 20px;
+
+    border: 3px solid #d62828;
+
+    border-radius: 50%;
+}
+
+.horario__titulo span{
+    color: #ff4d4d;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.contato-topo__horario p{
+    color: #ccc;
+}
+
+.contato-topo__horario h3{
+    font-size: 36px;
+    margin: 10px 0 25px;
+}
+
+.tempo-entrega{
+    border: 1px solid #444;
+
+    display: inline-block;
+
+    padding: 12px 18px;
+
+    border-radius: 30px;
+
+    margin-bottom: 25px;
+
+    font-size: 14px;
+}
+
+.acompanhamento{
+    line-height: 1.7;
+}
+
+/* RESPONSIVO */
+
+@media(max-width: 900px){
+
+    .contato-topo{
+        flex-direction: column;
+    }
+
+    .contato-topo__horario{
+        border-left: none;
+
+        border-top: 1px solid #2a2a2a;
+
+        padding-left: 0;
+        padding-top: 30px;
+    }
+
+    .contato-topo__whatsapp{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .whatsapp__texto h2{
+        font-size: 32px;
+    }
+
+}
+
+
+/* FORMULÁRIO */
 .conteiner-contato {
     background: white;
     padding: 60px 20px;
@@ -83,3 +282,4 @@
 .botao-enviar:hover {
     background-color: rgb(255, 62, 62);
 }
+/* FIM DO FORMULÁRIO */
