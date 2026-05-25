@@ -1,14 +1,13 @@
-<!DOCTYPE html>
+<!DOCTYPE mais-vendidos__textohtml>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="shortcut icon" href="assets/Favicon.svg" type="image/x-icon">
-    <title>La Forno — Cardápio</title>
+    <title>La Forno</title>
 </head>
 <body>
-
     <header class="cabecalho">
         <div class="cabecalho__logo">
             <h1 class="cabecalho__logo__texto">La Forno</h1>
@@ -22,187 +21,126 @@
                 <li class="cabecalho__navbar__lista__item"><a href="/desenvolvimento_web/contato.html">Contato</a></li>
             </ul>
         </nav>
-        <a class="cabecalho__carrinho" href="#"><img src="assets/carrinho.svg" alt=""></a>
+        <a class="cabecalho__carrinho" href="assets/w0fu52c6a8t61.jpg"><img src="assets/carrinho.svg" alt=""></a>
     </header>
 
-    <!-- PIZZAS CLÁSSICAS -->
-    <section class="mais-vendidos">
-        <h2 class="mais-vendidos__texto">Pizzas Clássicas</h2>
+    <section class="banner">
+        <img src="assets/banner.svg" alt="">
+    </section>
+
+    <main class="mais-vendidos">
+        <h2 class="mais-vendidos__texto">Mais Vendidos</h2>
         <div class="mais-vendidos__produtos">
             <div class="vendidos__produtos__card">
                 <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Margherita</p>
-                <p>R$ 49,90</p>
+                <p>Marguerita</p>
+                <p>R$ 99,90</p>
                 <div class="vendidos__produtos__card__quantidade">
                     <button>-</button>
                     <p>0</p>
                     <button>+</button>
                 </div>
-                <a class="vendidos__produtos__card__link" href="#">Adicionar à cesta</a>
+                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
             </div>
             <div class="vendidos__produtos__card">
                 <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Calabresa</p>
-                <p>R$ 52,90</p>
+                <p>Marguerita</p>
+                <p>R$ 99,90</p>
                 <div class="vendidos__produtos__card__quantidade">
                     <button>-</button>
                     <p>0</p>
                     <button>+</button>
                 </div>
-                <a class="vendidos__produtos__card__link" href="#">Adicionar à cesta</a>
+                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
             </div>
             <div class="vendidos__produtos__card">
                 <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Quatro Queijos</p>
-                <p>R$ 57,90</p>
+                <p>Marguerita</p>
+                <p>R$ 99,90</p>
                 <div class="vendidos__produtos__card__quantidade">
                     <button>-</button>
                     <p>0</p>
                     <button>+</button>
                 </div>
-                <a class="vendidos__produtos__card__link" href="#">Adicionar à cesta</a>
+                <a class="vendidos__produtos__card__link" href="https://vascaino.net/wp-content/uploads/2025/05/loide-augusto-1024x563.jpg">Adicionar à cesta</a>
+            </div>
+        </div>
+    </main>
+
+    <section class="mais-vendidos cardapio">
+        <h2 class="mais-vendidos__texto cardapio__texto">Cardápio</h2>
+        <div class="mais-vendidos__produtos">
+            <div class="vendidos__produtos__card">
+                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
+                <p>Marguerita</p>
+                <p>R$ 99,90</p>
+                <div class="vendidos__produtos__card__quantidade">
+                    <button>-</button>
+                    <p>0</p>
+                    <button>+</button>
+                </div>
+                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
             </div>
             <div class="vendidos__produtos__card">
                 <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Napolitana</p>
-                <p>R$ 54,90</p>
+                <p>Marguerita</p>
+                <p>R$ 99,90</p>
                 <div class="vendidos__produtos__card__quantidade">
                     <button>-</button>
                     <p>0</p>
                     <button>+</button>
                 </div>
-                <a class="vendidos__produtos__card__link" href="#">Adicionar à cesta</a>
+                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
+            </div>
+            <div class="vendidos__produtos__card">
+                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
+                <p>Marguerita</p>
+                <p>R$ 99,90</p>
+                <div class="vendidos__produtos__card__quantidade">
+                    <button>-</button>
+                    <p>0</p>
+                    <button>+</button>
+                </div>
+                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
             </div>
         </div>
     </section>
 
-    <!-- PIZZAS ESPECIAIS -->
-    <section class="mais-vendidos pizza-especiais">
-        <h2 class="mais-vendidos__texto texto__pizza-especiais">Pizzas Especiais</h2>
-        <div class="mais-vendidos__produtos">
-            <div class="vendidos__produtos__card">
-                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Trufa Negra</p>
-                <p>R$ 78,90</p>
-                <div class="vendidos__produtos__card__quantidade">
-                    <button>-</button>
-                    <p>0</p>
-                    <button>+</button>
-                </div>
-                <a class="vendidos__produtos__card__link" href="#">Adicionar à cesta</a>
-            </div>
-            <div class="vendidos__produtos__card">
-                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Burrata e Prosciutto</p>
-                <p>R$ 84,90</p>
-                <div class="vendidos__produtos__card__quantidade">
-                    <button>-</button>
-                    <p>0</p>
-                    <button>+</button>
-                </div>
-                <a class="vendidos__produtos__card__link" href="#">Adicionar à cesta</a>
-            </div>
-            <div class="vendidos__produtos__card">
-                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>La Forno Signature</p>
-                <p>R$ 92,90</p>
-                <div class="vendidos__produtos__card__quantidade">
-                    <button>-</button>
-                    <p>0</p>
-                    <button>+</button>
-                </div>
-                <a class="vendidos__produtos__card__link" href="#">Adicionar à cesta</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- PIZZAS VEGETARIANAS -->
     <section class="mais-vendidos vegetariano">
-        <h2 class="mais-vendidos__texto vegetariano__texto">Pizzas Vegetarianas</h2>
+        <h2 class="mais-vendidos__texto vegetariano__texto">Pizzas vegetarianas</h2>
         <div class="mais-vendidos__produtos">
             <div class="vendidos__produtos__card">
                 <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Primavera</p>
-                <p>R$ 51,90</p>
+                <p>Marguerita</p>
+                <p>R$ 99,90</p>
                 <div class="vendidos__produtos__card__quantidade">
                     <button>-</button>
                     <p>0</p>
                     <button>+</button>
                 </div>
-                <a class="vendidos__produtos__card__link" href="#">Adicionar à cesta</a>
+                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
             </div>
             <div class="vendidos__produtos__card">
                 <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Pesto Verde</p>
-                <p>R$ 55,90</p>
+                <p>Marguerita</p>
+                <p>R$ 99,90</p>
                 <div class="vendidos__produtos__card__quantidade">
                     <button>-</button>
                     <p>0</p>
                     <button>+</button>
                 </div>
-                <a class="vendidos__produtos__card__link" href="#">Adicionar à cesta</a>
+                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
             </div>
             <div class="vendidos__produtos__card">
                 <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Rúcula com Tomate</p>
-                <p>R$ 53,90</p>
+                <p>Marguerita</p>
+                <p>R$ 99,90</p>
                 <div class="vendidos__produtos__card__quantidade">
                     <button>-</button>
                     <p>0</p>
                     <button>+</button>
                 </div>
-                <a class="vendidos__produtos__card__link" href="#">Adicionar à cesta</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- REFRIGERANTES -->
-    <section class="mais-vendidos pizza-especiais">
-        <h2 class="mais-vendidos__texto texto__pizza-especiais">Refrigerantes</h2>
-        <div class="mais-vendidos__produtos">
-            <div class="vendidos__produtos__card">
-                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Coca-Cola</p>
-                <p>R$ 8,90</p>
-                <div class="vendidos__produtos__card__quantidade">
-                    <button>-</button>
-                    <p>0</p>
-                    <button>+</button>
-                </div>
-                <a class="vendidos__produtos__card__link" href="#">Adicionar à cesta</a>
-            </div>
-            <div class="vendidos__produtos__card">
-                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Guaraná Antarctica</p>
-                <p>R$ 8,90</p>
-                <div class="vendidos__produtos__card__quantidade">
-                    <button>-</button>
-                    <p>0</p>
-                    <button>+</button>
-                </div>
-                <a class="vendidos__produtos__card__link" href="#">Adicionar à cesta</a>
-            </div>
-            <div class="vendidos__produtos__card">
-                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Sprite</p>
-                <p>R$ 8,90</p>
-                <div class="vendidos__produtos__card__quantidade">
-                    <button>-</button>
-                    <p>0</p>
-                    <button>+</button>
-                </div>
-                <a class="vendidos__produtos__card__link" href="#">Adicionar à cesta</a>
-            </div>
-            <div class="vendidos__produtos__card">
-                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Fanta Laranja</p>
-                <p>R$ 8,90</p>
-                <div class="vendidos__produtos__card__quantidade">
-                    <button>-</button>
-                    <p>0</p>
-                    <button>+</button>
-                </div>
-                <a class="vendidos__produtos__card__link" href="#">Adicionar à cesta</a>
+                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
             </div>
         </div>
     </section>
@@ -224,7 +162,7 @@
             <div class="line"><img src="assets/line-xl-svgrepo-com.svg" alt=""></div>
 
             <div class="footer__superior__contatos">
-                <a href="#"><img src="assets/whatsapp-svgrepo-com.svg" alt=""></a>
+                <a href="assets/w0fu52c6a8t61.jpg"><img src="assets/whatsapp-svgrepo-com.svg" alt=""></a>
                 <a href="#"><img src="assets/instagram-svgrepo-com.svg" alt=""></a>
             </div>
         </div>
