@@ -3,11 +3,11 @@
 --  Importe este arquivo no phpMyAdmin para criar o banco
 -- ============================================================
 
-CREATE DATABASE IF NOT EXISTS ecommerce
+CREATE DATABASE IF NOT EXISTS thiago
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
 
-USE ecommerce;
+USE thiago;
 
 -- ------------------------------------------------------------
 -- CATEGORIAS
