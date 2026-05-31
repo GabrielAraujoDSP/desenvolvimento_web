@@ -23,17 +23,11 @@ if (!isset($_SESSION['usuario_id'])) {
                 <h1>La Forno</h1>
             </div>
 
-            <h2 style="color:#8B1A1A; text-align:center;">
-                Olá, <?php echo $_SESSION['usuario_nome']; ?>!
-            </h2>
-            <p style="text-align:center; color:#555;">
-                Bem-vindo à sua conta.
-            </p>
+            <h2 class="perfil-titulo">Olá, <?php echo $_SESSION['usuario_nome']; ?>!</h2>
 
-            <a href="server/processar.php?acao=logout" 
-               style="display:block; text-align:center; margin-top:20px; color:#8B1A1A;">
-                Sair da conta
-            </a>
+            <p class="perfil-subtitulo">Bem-vindo à sua conta.</p>
+
+            <a href="server/processar.php?acao=logout" class="perfil-sair">Sair da conta</a>
         </div>
     </div>
 </body>

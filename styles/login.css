@@ -130,3 +130,22 @@ form {
 .btn-submit:hover {
     background-color: #6e1414;
 }
+
+/* Estilização do perfil.php */
+.perfil-titulo {
+    color: #8B1A1A;
+    text-align: center;
+}
+
+.perfil-subtitulo {
+    text-align: center;
+    color: #555;
+}
+
+.perfil-sair {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #8B1A1A;
+    text-decoration: underline;
+}
