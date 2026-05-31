@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f5f0e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.login-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.login-logo img {
+    width: 60px;
+}
+
+.login-logo h1 {
+    color: #8B1A1A;
+    font-size: 1.8rem;
+}
+
+.login-abas {
+    display: flex;
+    border-bottom: 2px solid #eee;
+}
+
+.aba {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #999;
+    font-weight: 500;
+}
+
+.aba.ativa {
+    color: #8B1A1A;
+    border-bottom: 2px solid #8B1A1A;
+    margin-bottom: -2px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo label {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.campo input {
+    padding: 10px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.campo input:focus {
+    border-color: #8B1A1A;
+}
+
+.input-nome {
+    width: 90%;
+}
+
+.input-email {
+    width: 80%;
+}
+
+.input-senha {
+    width: 70%;
+}
+
+.btn-submit {
+    background-color: #8B1A1A;
+    color: #fff;
+    padding: 12px 3px;
+    width: 80%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #6e1414;
+}

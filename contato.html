@@ -17,10 +17,10 @@
         </div>
         <nav class="cabecalho__navbar">
             <ul class="cabecalho__navbar__lista">
-                <li class="cabecalho__navbar__lista__item"><a href="/desenvolvimento_web/index.php">Início</a></li>
-                <li class="cabecalho__navbar__lista__item"><a href="/desenvolvimento_web/cardapio.html">Cardápio</a></li>
-                <li class="cabecalho__navbar__lista__item"><a href="/desenvolvimento_web/sobre_nos.html">Sobre Nós</a></li>
-                <li class="cabecalho__navbar__lista__item"><a href=/desenvolvimento_web/contato.html">Contato</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="index.php">Início</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="cardapio.html">Cardápio</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="sobre_nos.html">Sobre Nós</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
         <a class="cabecalho__carrinho" href="#"><img src="assets/carrinho.svg" alt=""></a>
@@ -95,15 +95,16 @@
         <section class="contato">
             <h2>Fale Conosco</h2>
             <p>Para qualquer dúvida, críticas ou sugestões, mande uma mensagem para nós!</p>
-            <form action="#" method="post" class="forme-contato">
+            <form action="server/processar.php" method="post" class="forme-contato">
+                <input type="hidden" name="acao" value="contato">
                 <div class="tropa-do-input">
                     <label for="titulo_nome">Seu Nome:</label><br>
-                    <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
                 </div>
 
                 <div class="tropa-do-input">
                     <label for="titulo_email">Seu E-mail:</label><br>
-                    <input type="email" id="email" placeholder="seu@email.com" required>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" required>
                 </div>
 
                 <div class="tropa-do-input">
@@ -143,5 +144,6 @@
             <h3>Desenvolvido por: Gabriel Araújo, Thiago Marlon, Davi Costa e Felipe Carnot</h3>
         </div>
     </footer>
+    <script src="scripts/formulario_msg_de_envio.js"></script>
 </body>
 </html>

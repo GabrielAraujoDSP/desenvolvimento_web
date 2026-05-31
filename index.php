@@ -1,3 +1,12 @@
+<?php
+session_start();
+require_once 'server/conexao.php';
+
+$stmt = $conn->prepare("SELECT nome, preco, descricao FROM produtos WHERE ativo = 1 LIMIT 3");
+$stmt->execute();
+$mais_vendidos = $stmt->get_result();
+?>
+
 <!DOCTYPE mais-vendidos__textohtml>
 <html lang="pt-BR">
 <head>
@@ -15,10 +24,11 @@
         </div>
         <nav class="cabecalho__navbar">
             <ul class="cabecalho__navbar__lista">
-                <li class="cabecalho__navbar__lista__item"><a href="/desenvolvimento_web/index.php">Início</a></li>
-                <li class="cabecalho__navbar__lista__item"><a href="/desenvolvimento_web/cardapio.html">Cardápio</a></li>
-                <li class="cabecalho__navbar__lista__item"><a href="/desenvolvimento_web/sobre_nos.html">Sobre Nós</a></li>
-                <li class="cabecalho__navbar__lista__item"><a href="/desenvolvimento_web/contato.html">Contato</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="index.php">Início</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="cardapio.html">Cardápio</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="sobre_nos.html">Sobre Nós</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="contato.html">Contato</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="login.php" class="btn-entrar">Entrar</a></li>
             </ul>
         </nav>
         <a class="cabecalho__carrinho" href="assets/w0fu52c6a8t61.jpg"><img src="assets/carrinho.svg" alt=""></a>
@@ -31,119 +41,21 @@
     <main class="mais-vendidos">
         <h2 class="mais-vendidos__texto">Mais Vendidos</h2>
         <div class="mais-vendidos__produtos">
+            <?php while($produto = $mais_vendidos->fetch_assoc()): ?>
             <div class="vendidos__produtos__card">
                 <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Marguerita</p>
-                <p>R$ 99,90</p>
+                <p><?php echo $produto['nome']; ?></p>
+                <p>R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></p>
                 <div class="vendidos__produtos__card__quantidade">
                     <button>-</button>
                     <p>0</p>
                     <button>+</button>
                 </div>
-                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
+                <a class="vendidos__produtos__card__link" href="#">Adicionar à cesta</a>
             </div>
-            <div class="vendidos__produtos__card">
-                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Marguerita</p>
-                <p>R$ 99,90</p>
-                <div class="vendidos__produtos__card__quantidade">
-                    <button>-</button>
-                    <p>0</p>
-                    <button>+</button>
-                </div>
-                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
-            </div>
-            <div class="vendidos__produtos__card">
-                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Marguerita</p>
-                <p>R$ 99,90</p>
-                <div class="vendidos__produtos__card__quantidade">
-                    <button>-</button>
-                    <p>0</p>
-                    <button>+</button>
-                </div>
-                <a class="vendidos__produtos__card__link" href="https://vascaino.net/wp-content/uploads/2025/05/loide-augusto-1024x563.jpg">Adicionar à cesta</a>
-            </div>
+            <?php endwhile; ?>
         </div>
     </main>
-
-    <section class="mais-vendidos cardapio">
-        <h2 class="mais-vendidos__texto cardapio__texto">Cardápio</h2>
-        <div class="mais-vendidos__produtos">
-            <div class="vendidos__produtos__card">
-                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Marguerita</p>
-                <p>R$ 99,90</p>
-                <div class="vendidos__produtos__card__quantidade">
-                    <button>-</button>
-                    <p>0</p>
-                    <button>+</button>
-                </div>
-                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
-            </div>
-            <div class="vendidos__produtos__card">
-                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Marguerita</p>
-                <p>R$ 99,90</p>
-                <div class="vendidos__produtos__card__quantidade">
-                    <button>-</button>
-                    <p>0</p>
-                    <button>+</button>
-                </div>
-                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
-            </div>
-            <div class="vendidos__produtos__card">
-                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Marguerita</p>
-                <p>R$ 99,90</p>
-                <div class="vendidos__produtos__card__quantidade">
-                    <button>-</button>
-                    <p>0</p>
-                    <button>+</button>
-                </div>
-                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="mais-vendidos vegetariano">
-        <h2 class="mais-vendidos__texto vegetariano__texto">Pizzas vegetarianas</h2>
-        <div class="mais-vendidos__produtos">
-            <div class="vendidos__produtos__card">
-                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Marguerita</p>
-                <p>R$ 99,90</p>
-                <div class="vendidos__produtos__card__quantidade">
-                    <button>-</button>
-                    <p>0</p>
-                    <button>+</button>
-                </div>
-                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
-            </div>
-            <div class="vendidos__produtos__card">
-                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Marguerita</p>
-                <p>R$ 99,90</p>
-                <div class="vendidos__produtos__card__quantidade">
-                    <button>-</button>
-                    <p>0</p>
-                    <button>+</button>
-                </div>
-                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
-            </div>
-            <div class="vendidos__produtos__card">
-                <img class="vendidos__produtos__card__pizza" src="assets/pizzas/pizza_margueita.svg" alt="">
-                <p>Marguerita</p>
-                <p>R$ 99,90</p>
-                <div class="vendidos__produtos__card__quantidade">
-                    <button>-</button>
-                    <p>0</p>
-                    <button>+</button>
-                </div>
-                <a class="vendidos__produtos__card__link" href="assets/w0fu52c6a8t61.jpg">Adicionar à cesta</a>
-            </div>
-        </div>
-    </section>
 
     <footer class="footer">
         <div class="footer_superior">

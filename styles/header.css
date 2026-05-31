@@ -78,3 +78,11 @@ body {
 .cabecalho__carrinho img {
     width: 2.1em;
 }
+
+.cabecalho__navbar__lista .btn-entrar {
+    background-color: #fff;
+    color: #8B1A1A;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+}
