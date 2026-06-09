@@ -1,0 +1,284 @@
+/* =============================================
+   sobre_nos.css — La Forno
+   ============================================= */
+ 
+/* ---------- Reset básico da página ---------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fdf6ee;
+    color: #2c1a0e;
+}
+ 
+/* =============================================
+   MAIN — remove gaps
+   ============================================= */
+.sobre-nos {
+    margin: 0;
+    padding: 0;
+}
+ 
+/* =============================================
+   BANNER SIMPLES — "Nossa História"
+   ============================================= */
+.banner-simples {
+    background-color: #8b2a1e;
+    padding: 60px 80px;
+    position: relative;
+    overflow: hidden;
+}
+ 
+/* Detalhe decorativo: linha diagonal de fundo */
+.banner-simples::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+ 
+.banner-simples::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+ 
+.banner-simples h1 {
+    font-family: 'Georgia', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+ 
+/* Sublinhado decorativo abaixo do título */
+.banner-simples h1::after {
+    content: '';
+    display: block;
+    margin-top: 12px;
+    width: 80px;
+    height: 4px;
+    background-color: #e8a838;
+    border-radius: 2px;
+}
+ 
+/* =============================================
+   CONTEÚDO PRINCIPAL — texto + imagem lado a lado
+   ============================================= */
+.conteudo-texto {
+    display: flex;
+    align-items: stretch;
+    min-height: 520px;
+}
+ 
+/* --- Coluna de texto (esquerda) --- */
+.texto {
+    flex: 0 0 38%;
+    background-color: #fdf6ee;
+    padding: 56px 56px 56px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+    border-right: 1px solid #e8d5c0;
+}
+ 
+.texto p {
+    font-size: 1.2rem;
+    line-height: 1.85;
+    color: #3d2010;
+}
+ 
+/* Aspas decorativas antes do parágrafo */
+.texto p:first-child::before {
+    content: '"';
+    display: block;
+    font-size: 4rem;
+    line-height: 1;
+    color: #c0392b;
+    margin-bottom: -8px;
+    font-family: 'Georgia', serif;
+}
+ 
+/* --- Coluna da imagem (direita) --- */
+.imagem-loja {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+ 
+.imagem-loja img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.6s ease;
+}
+ 
+.imagem-loja:hover img {
+    transform: scale(1.03);
+}
+ 
+/* Gradiente sutil na borda esquerda da imagem para suavizar a transição */
+.imagem-loja::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    background: linear-gradient(to right, #fdf6ee, transparent);
+    z-index: 1;
+    pointer-events: none;
+}
+ 
+/* =============================================
+   FOOTER — herda do header.css mas garante base
+   ============================================= */
+.footer {
+    background-color: #1e0e06;
+    color: #f5e6d3;
+    padding: 40px 80px 20px;
+    margin-top: 0;
+}
+ 
+.footer_superior {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+ 
+.footer_superior__logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+ 
+.footer_superior__logo img {
+    width: 48px;
+    filter: brightness(0) invert(1);
+}
+ 
+.footer_superior__logo p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #f5e6d3;
+}
+ 
+.line img {
+    height: 60px;
+    opacity: 0.2;
+}
+ 
+.footer__superior__informacoes p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #c9b49a;
+}
+ 
+.footer__superior__contatos {
+    display: flex;
+    gap: 16px;
+}
+ 
+.footer__superior__contatos a img {
+    width: 32px;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+ 
+.footer__superior__contatos a:hover img {
+    opacity: 1;
+}
+ 
+.footer_infeior {
+    padding-top: 20px;
+    text-align: center;
+}
+ 
+.footer_infeior h3 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #7a6050;
+    letter-spacing: 0.5px;
+}
+ 
+/* =============================================
+   RESPONSIVO — tablet e mobile
+   ============================================= */
+@media (max-width: 900px) {
+    .banner-simples {
+        padding: 40px 32px;
+    }
+ 
+    .banner-simples h1 {
+        font-size: 2.2rem;
+    }
+ 
+    .conteudo-texto {
+        flex-direction: column;
+    }
+ 
+    .texto {
+        flex: none;
+        padding: 40px 32px;
+        border-right: none;
+        border-bottom: 1px solid #e8d5c0;
+    }
+ 
+    .imagem-loja {
+        height: 320px;
+    }
+ 
+    .imagem-loja::before {
+        display: none;
+    }
+ 
+    .footer {
+        padding: 40px 32px 20px;
+    }
+ 
+    .footer_superior {
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+ 
+    .line {
+        display: none;
+    }
+}
+ 
+@media (max-width: 480px) {
+    .banner-simples h1 {
+        font-size: 1.8rem;
+    }
+ 
+    .texto p {
+        font-size: 1rem;
+    }
+ 
+    .imagem-loja {
+        height: 240px;
+    }
+}
