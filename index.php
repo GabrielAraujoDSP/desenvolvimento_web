@@ -42,7 +42,7 @@ $mais_vendidos = $stmt->get_result();
             <?php endif; ?>
             </ul>
         </nav>
-        <a class="cabecalho__carrinho" href="assets/w0fu52c6a8t61.jpg"><img src="assets/carrinho.svg" alt=""></a>
+        <a class="cabecalho__carrinho" href="carrinho.html"><img src="assets/carrinho.svg" alt=""></a>
     </header>
 
     <section class="banner">

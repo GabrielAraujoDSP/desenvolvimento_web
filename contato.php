@@ -39,7 +39,7 @@
                 <?php endif; ?>
             </ul>
         </nav>
-        <a class="cabecalho__carrinho" href="#"><img src="assets/carrinho.svg" alt=""></a>
+        <a class="cabecalho__carrinho" href="carrinho.html"><img src="assets/carrinho.svg" alt=""></a>
     </header>
     <!-- Fim do cabeçalho -->
 
