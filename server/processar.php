@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Logout - Sair
 if (isset($_GET['acao']) && $_GET['acao'] === 'logout') {
     session_destroy();
-    header('location: /desenvolvimento_web/login.php');
+    header('location: /desenvolvimento_web/index.php');
     exit;
 }
 ?>

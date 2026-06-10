@@ -1,8 +1,13 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/sobre_nos.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="shortcut icon" href="assets/Favicon.svg" type="image/x-icon">
     <title>La Forno — Cardápio</title>
@@ -16,9 +21,21 @@
         <nav class="cabecalho__navbar">
             <ul class="cabecalho__navbar__lista">
                 <li class="cabecalho__navbar__lista__item"><a href="index.php">Início</a></li>
-                <li class="cabecalho__navbar__lista__item"><a href="cardapio.html">Cardápio</a></li>
-                <li class="cabecalho__navbar__lista__item"><a href="sobre_nos.html">Sobre Nós</a></li>
-                <li class="cabecalho__navbar__lista__item"><a href="contato.html">Contato</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="cardapio.php">Cardápio</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="sobre_nos.php">Sobre Nós</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="contato.php">Contato</a></li>
+                <?php if (isset($_SESSION['usuario_id'])): ?>
+                <li class="cabecalho__navbar__lista__item">
+                    <a href="perfil.php">Olá, <?= htmlspecialchars($_SESSION['usuario_nome']) ?></a>
+                </li>
+                <li class="cabecalho__navbar__lista__item">
+                    <a href="server/processar.php?acao=logout" class="btn-entrar">Sair</a>
+                </li>
+                <?php else: ?>
+                <li class="cabecalho__navbar__lista__item">
+                    <a href="login.php" class="btn-entrar">Entrar</a>
+                </li>
+                <?php endif; ?>
             </ul>
         </nav>
         <a class="cabecalho__carrinho" href="#"><img src="assets/carrinho.svg" alt=""></a>
