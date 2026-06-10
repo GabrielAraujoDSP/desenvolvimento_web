@@ -1,4 +1,15 @@
-<?php session_start(); ?>
+<?php
+session_start();
+
+if (isset($_SESSION['usuario_id'])) {
+    header('location: /desenvolvimento_web/perfil.php');
+    exit;
+}
+
+$erro     = isset($_GET['erro']);
+$cadastro = isset($_GET['cadastro']);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,6 +22,14 @@
 <body>
     <div class="login-container">
         <div class="login-card">
+
+        <?php if ($erro): ?>
+            <div class="mensagem erro">E-mail ou senha incorretos.</div>
+        <?php endif; ?>
+
+        <?php if ($cadastro): ?>
+            <div class="mensagem sucesso">Conta criada! Faça login.</div>
+        <?php endif; ?>
             <div class="login-logo">
                 <img src="assets/forno 1 (Traced).svg" alt="La Forno">
                 <h1>La Forno</h1>
