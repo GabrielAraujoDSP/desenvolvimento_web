@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/carrinho.css">
+    <link rel="shortcut icon" href="assets/Favicon.svg" type="image/x-icon">
+    <title>La Forno - Carrinho</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho__logo">
+            <h1 class="cabecalho__logo__texto">La Forno</h1>
+            <img class="cabecalho__logo__imagem" src="assets/forno 1 (Traced).svg" alt="">
+        </div>
+        <nav class="cabecalho__navbar">
+            <ul class="cabecalho__navbar__lista">
+                <li class="cabecalho__navbar__lista__item"><a href="index.php">Inicio</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="cardapio.html">Cardapio</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="sobre_nos.html">Sobre Nos</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <a class="cabecalho__carrinho" href="carrinho.html"><img src="assets/carrinho.svg" alt=""></a>
+    </header>
+
+    <main class="carrinho">
+        <h2>Meu Carrinho</h2>
+        <div id="lista-carrinho"></div>
+        <p class="carrinho__total">Total: R$ <span id="total-carrinho">0,00</span></p>
+        <button id="limpar-carrinho">Limpar carrinho</button>
+    </main>
+
+    <script src="scripts/carrinho.js"></script>
+</body>
+</html>

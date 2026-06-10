@@ -31,7 +31,7 @@ $mais_vendidos = $stmt->get_result();
                 <li class="cabecalho__navbar__lista__item"><a href="login.php" class="btn-entrar">Entrar</a></li>
             </ul>
         </nav>
-        <a class="cabecalho__carrinho" href="assets/w0fu52c6a8t61.jpg"><img src="assets/carrinho.svg" alt=""></a>
+        <a class="cabecalho__carrinho" href="carrinho.html"><img src="assets/carrinho.svg" alt=""></a>
     </header>
 
     <section class="banner">
