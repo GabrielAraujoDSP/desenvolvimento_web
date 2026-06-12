@@ -39,7 +39,10 @@
                 <?php endif; ?>
             </ul>
         </nav>
-        <a class="cabecalho__carrinho" href="carrinho.html"><img src="assets/carrinho.svg" alt=""></a>
+        <a class="cabecalho__carrinho" href="carrinho.html">
+            <img src="assets/carrinho.svg" alt="">
+            <span class="carrinho__contador" id="carrinho-contador"></span>
+        </a>
     </header>
     <!-- Fim do cabeçalho -->
 
@@ -161,5 +164,14 @@
         </div>
     </footer>
     <script src="scripts/formulario_msg_de_envio.js"></script>
+<script>
+(function() {
+    var c = JSON.parse(localStorage.getItem('carrinho')) || [];
+    var t = 0;
+    for (var i = 0; i < c.length; i++) t += c[i].quantidade;
+    var el = document.getElementById('carrinho-contador');
+    if (el && t > 0) { el.textContent = t; el.style.display = 'flex'; }
+})();
+</script>
 </body>
 </html>

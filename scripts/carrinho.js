@@ -1,3 +1,21 @@
+function atualizarContadorCarrinho() {
+    var c = JSON.parse(localStorage.getItem('carrinho')) || [];
+    var totalItens = 0;
+    for (var i = 0; i < c.length; i++) {
+        totalItens += c[i].quantidade;
+    }
+    var el = document.getElementById('carrinho-contador');
+    if (el) {
+        if (totalItens > 0) {
+            el.textContent = totalItens;
+            el.style.display = 'flex';
+        } else {
+            el.style.display = 'none';
+        }
+    }
+}
+atualizarContadorCarrinho();
+
 const listaCarrinho = document.getElementById('lista-carrinho');
 const totalCarrinho = document.getElementById('total-carrinho');
 const botaoLimpar = document.getElementById('limpar-carrinho');
@@ -37,6 +55,7 @@ function mostrarCarrinho() {
 botaoLimpar.addEventListener('click', () => {
     localStorage.removeItem('carrinho');
     mostrarCarrinho();
+    atualizarContadorCarrinho();
 });
 
 mostrarCarrinho();

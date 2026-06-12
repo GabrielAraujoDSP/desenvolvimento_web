@@ -73,10 +73,29 @@ body {
 .cabecalho__carrinho {
     margin-right: 4em;
     display: flex;
+    position: relative;
+    align-items: center;
 }
 
 .cabecalho__carrinho img {
     width: 2.1em;
+}
+
+.carrinho__contador {
+    position: absolute;
+    top: -4px;
+    right: -6px;
+    background-color: var(--texto-branco);
+    color: var(--vermelho-principal);
+    border-radius: 50%;
+    font-size: 0.6rem;
+    font-weight: 700;
+    width: 16px;
+    height: 16px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .cabecalho__navbar__lista .btn-entrar {

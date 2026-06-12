@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/pagamento.css">
+    <link rel="shortcut icon" href="assets/Favicon.svg" type="image/x-icon">
+    <title>La Forno - Pagamento</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho__logo">
+            <h1 class="cabecalho__logo__texto">La Forno</h1>
+            <img class="cabecalho__logo__imagem" src="assets/forno 1 (Traced).svg" alt="">
+        </div>
+        <nav class="cabecalho__navbar">
+            <ul class="cabecalho__navbar__lista">
+                <li class="cabecalho__navbar__lista__item"><a href="index.php">Início</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="cardapio.php">Cardápio</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="sobre_nos.php">Sobre Nós</a></li>
+                <li class="cabecalho__navbar__lista__item"><a href="contato.php">Contato</a></li>
+            </ul>
+        </nav>
+        <a class="cabecalho__carrinho" href="carrinho.html">
+            <img src="assets/carrinho.svg" alt="">
+            <span class="carrinho__contador" id="carrinho-contador"></span>
+        </a>
+    </header>
+
+    <main class="pagamento">
+        <h2>Forma de Pagamento</h2>
+
+        <p class="pagamento__resumo">Total do pedido: R$ <span id="total-pedido">0,00</span></p>
+
+        <!-- Endereço de Entrega -->
+        <div class="pagamento__endereco">
+            <h3>Endereço de Entrega</h3>
+            <div class="pagamento__cep-row">
+                <input type="text" id="cep" placeholder="00000-000" maxlength="9">
+                <button onclick="buscarCEP()">Buscar</button>
+            </div>
+            <p class="pagamento__erro" id="cep-erro"></p>
+            <div id="endereco-resultado" class="pagamento__endereco-resultado" style="display: none;">
+                <p id="endereco-logradouro"></p>
+                <p id="endereco-cidade"></p>
+                <label for="endereco-numero">Número</label>
+                <input type="text" id="endereco-numero" placeholder="Ex: 123">
+                <label for="endereco-complemento">Complemento <span style="font-weight:400; font-size:0.85rem">(opcional)</span></label>
+                <input type="text" id="endereco-complemento" placeholder="Apto, bloco...">
+            </div>
+        </div>
+
+        <div class="pagamento__opcoes">
+            <button class="pagamento__btn ativo" onclick="mostrarOpcao('pix', this)">Pix</button>
+            <button class="pagamento__btn" onclick="mostrarOpcao('debito', this)">Cartão de Débito</button>
+            <button class="pagamento__btn" onclick="mostrarOpcao('credito', this)">Cartão de Crédito</button>
+        </div>
+
+        <!-- Pix -->
+        <div id="pix" class="pagamento__secao">
+            <h3>Pagamento via Pix</h3>
+            <p>Escaneie o QR Code abaixo com o aplicativo do seu banco:</p>
+            <img
+                class="pagamento__qrcode"
+                src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=tropadapizza%40gmail.com"
+                alt="QR Code Pix"
+                width="200"
+                height="200"
+            >
+            <p class="pagamento__chave">Chave Pix: tropadapizza@gmail.com</p>
+            <button class="pagamento__confirmar" onclick="confirmarPagamento()">Confirmar Pagamento</button>
+        </div>
+
+        <!-- Cartão de Débito -->
+        <div id="debito" class="pagamento__secao" style="display: none;">
+            <h3>Cartão de Débito</h3>
+            <div class="pagamento__form">
+                <label for="debito-numero">Número do Cartão</label>
+                <input type="text" id="debito-numero" placeholder="0000 0000 0000 0000" maxlength="19">
+
+                <label for="debito-validade">Validade</label>
+                <input type="text" id="debito-validade" placeholder="MM/AA" maxlength="5">
+
+                <label for="debito-cvv">CVV</label>
+                <input type="text" id="debito-cvv" placeholder="000" maxlength="3">
+
+                <label for="debito-cpf">CPF do Titular</label>
+                <input type="text" id="debito-cpf" placeholder="000.000.000-00" maxlength="14">
+
+                <label for="debito-nome">Nome Completo</label>
+                <input type="text" id="debito-nome" placeholder="Nome como está no cartão">
+
+                <button class="pagamento__confirmar" onclick="confirmarPagamento()">Confirmar Pagamento</button>
+            </div>
+        </div>
+
+        <!-- Cartão de Crédito -->
+        <div id="credito" class="pagamento__secao" style="display: none;">
+            <h3>Cartão de Crédito</h3>
+            <div class="pagamento__form">
+                <label for="credito-numero">Número do Cartão</label>
+                <input type="text" id="credito-numero" placeholder="0000 0000 0000 0000" maxlength="19">
+
+                <label for="credito-validade">Validade</label>
+                <input type="text" id="credito-validade" placeholder="MM/AA" maxlength="5">
+
+                <label for="credito-cvv">CVV</label>
+                <input type="text" id="credito-cvv" placeholder="000" maxlength="3">
+
+                <label for="credito-cpf">CPF do Titular</label>
+                <input type="text" id="credito-cpf" placeholder="000.000.000-00" maxlength="14">
+
+                <label for="credito-nome">Nome Completo</label>
+                <input type="text" id="credito-nome" placeholder="Nome como está no cartão">
+
+                <label for="credito-parcelas">Parcelamento</label>
+                <select id="credito-parcelas">
+                    <option value="1">À vista</option>
+                    <option value="2">2x sem juros</option>
+                    <option value="3">3x sem juros</option>
+                </select>
+
+                <button class="pagamento__confirmar" onclick="confirmarPagamento()">Confirmar Pagamento</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer_superior">
+            <div class="footer_superior__logo">
+                <img src="assets/forno 1 (Traced).svg" alt="">
+                <p>La Forno</p>
+            </div>
+
+            <div class="line"><img src="assets/line-xl-svgrepo-com.svg" alt=""></div>
+
+            <div class="footer__superior__informacoes">
+                <p>Email: tropadapizza@gmail.com</p>
+                <p>Localização: Botafogo é bairro</p>
+            </div>
+
+            <div class="line"><img src="assets/line-xl-svgrepo-com.svg" alt=""></div>
+
+            <div class="footer__superior__contatos">
+                <a href="#"><img src="assets/whatsapp-svgrepo-com.svg" alt=""></a>
+                <a href="#"><img src="assets/instagram-svgrepo-com.svg" alt=""></a>
+            </div>
+        </div>
+        <div class="footer_infeior">
+            <h3>Desenvolvido por: Gabriel Araújo, Thiago Marlon, Davi Costa e Felipe Carnot</h3>
+        </div>
+    </footer>
+
+    <script src="scripts/pagamento.js"></script>
+</body>
+</html>

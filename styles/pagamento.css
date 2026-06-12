@@ -1,0 +1,179 @@
+.pagamento {
+    background-color: var(--bege-background_1);
+    min-height: 70vh;
+    padding: 3em;
+}
+
+.pagamento h2 {
+    color: var(--vermelho-principal);
+    margin-bottom: 1em;
+}
+
+.pagamento h3 {
+    color: var(--vermelho-principal);
+    margin-bottom: 1em;
+}
+
+.pagamento__resumo {
+    background-color: var(--texto-branco);
+    border: 1px solid var(--vermelho-principal);
+    border-radius: 12px;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 2em;
+    padding: 0.8em 1.4em;
+}
+
+.pagamento__opcoes {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 2em;
+    flex-wrap: wrap;
+}
+
+.pagamento__btn {
+    background-color: var(--texto-branco);
+    border: 2px solid var(--vermelho-principal);
+    border-radius: 20px;
+    color: var(--vermelho-principal);
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    padding: 0.6em 1.4em;
+}
+
+.pagamento__btn.ativo {
+    background-color: var(--vermelho-principal);
+    color: var(--texto-branco);
+}
+
+.pagamento__secao {
+    background-color: var(--texto-branco);
+    border: 1px solid var(--vermelho-principal);
+    border-radius: 12px;
+    max-width: 500px;
+    padding: 2em;
+}
+
+.pagamento__secao p {
+    margin-bottom: 0.5em;
+}
+
+.pagamento__qrcode {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: block;
+    margin: 1em 0;
+}
+
+.pagamento__chave {
+    color: var(--texto-preto);
+    font-weight: 600;
+    margin-bottom: 1.5em;
+}
+
+.pagamento__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+}
+
+.pagamento__form label {
+    color: var(--texto-preto);
+    font-weight: 500;
+    margin-top: 0.6em;
+}
+
+.pagamento__form input,
+.pagamento__form select {
+    border: 1px solid var(--vermelho-principal);
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    padding: 0.6em 0.8em;
+}
+
+.pagamento__confirmar {
+    background-color: var(--texto-verde);
+    border: none;
+    border-radius: 20px;
+    color: var(--texto-branco);
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    margin-top: 1.2em;
+    padding: 0.8em 1.2em;
+}
+
+.pagamento__endereco {
+    background-color: var(--texto-branco);
+    border: 1px solid var(--vermelho-principal);
+    border-radius: 12px;
+    max-width: 500px;
+    padding: 2em;
+    margin-bottom: 2em;
+}
+
+.pagamento__cep-row {
+    display: flex;
+    gap: 0.6em;
+    align-items: center;
+}
+
+.pagamento__cep-row input {
+    flex: 1;
+    border: 1px solid var(--vermelho-principal);
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    padding: 0.6em 0.8em;
+}
+
+.pagamento__cep-row button {
+    background-color: var(--vermelho-principal);
+    border: none;
+    border-radius: 8px;
+    color: var(--texto-branco);
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    padding: 0.6em 1em;
+}
+
+.pagamento__endereco-resultado {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.pagamento__endereco-resultado p {
+    color: var(--texto-preto);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.pagamento__endereco-resultado label {
+    color: var(--texto-preto);
+    font-weight: 500;
+    margin-top: 0.5em;
+    font-size: 0.95rem;
+}
+
+.pagamento__endereco-resultado input {
+    border: 1px solid var(--vermelho-principal);
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    padding: 0.6em 0.8em;
+}
+
+.pagamento__erro {
+    color: #c0392b;
+    font-size: 0.85rem;
+    margin-top: 0.4em;
+    min-height: 1.2em;
+}

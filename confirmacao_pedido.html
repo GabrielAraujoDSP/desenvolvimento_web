@@ -1,18 +1,14 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/sobre_nos.css">
     <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/confirmacao_pedido.css">
     <link rel="shortcut icon" href="assets/Favicon.svg" type="image/x-icon">
-    <title>La Forno — Cardápio</title>
+    <title>La Forno - Pedido Confirmado</title>
 </head>
-
+<body>
     <header class="cabecalho">
         <div class="cabecalho__logo">
             <h1 class="cabecalho__logo__texto">La Forno</h1>
@@ -24,18 +20,6 @@
                 <li class="cabecalho__navbar__lista__item"><a href="cardapio.php">Cardápio</a></li>
                 <li class="cabecalho__navbar__lista__item"><a href="sobre_nos.php">Sobre Nós</a></li>
                 <li class="cabecalho__navbar__lista__item"><a href="contato.php">Contato</a></li>
-                <?php if (isset($_SESSION['usuario_id'])): ?>
-                <li class="cabecalho__navbar__lista__item">
-                    <a href="perfil.php">Olá, <?= htmlspecialchars($_SESSION['usuario_nome']) ?></a>
-                </li>
-                <li class="cabecalho__navbar__lista__item">
-                    <a href="server/processar.php?acao=logout" class="btn-entrar">Sair</a>
-                </li>
-                <?php else: ?>
-                <li class="cabecalho__navbar__lista__item">
-                    <a href="login.php" class="btn-entrar">Entrar</a>
-                </li>
-                <?php endif; ?>
             </ul>
         </nav>
         <a class="cabecalho__carrinho" href="carrinho.html">
@@ -44,21 +28,30 @@
         </a>
     </header>
 
-    <!-- Sobre Nós -->
-     <main class="sobre-nos">
-        <section class="banner-simples">
-            <h1>Nossa História</h1>
-        </section>
+    <main class="confirmacao">
+        <div class="confirmacao__card">
+            <h2 class="confirmacao__titulo">Pedido confirmado, em preparação!</h2>
+            <p class="confirmacao__mensagem">Obrigado pela sua preferência! Seu pedido já está sendo preparado com muito carinho.</p>
 
-        <section class="conteudo-texto">
-            <div class="texto">
-                <p>A La Forno surgiu da missão de espalhar a todos a verdadeira pizza artesanal!</p>
+            <div class="confirmacao__bloco">
+                <h3>Endereço de Entrega</h3>
+                <p id="conf-endereco">—</p>
             </div>
-            <div class="imagem-loja">
-                <img src="assets/laforno_fachada.png" alt="Fachada da Pizzaria La Forno">
+
+            <div class="confirmacao__bloco">
+                <h3>Itens do Pedido</h3>
+                <ul class="confirmacao__lista" id="conf-itens"></ul>
+                <p class="confirmacao__total">Total: R$ <span id="conf-total">0,00</span></p>
             </div>
-        </section>
-     </main>
+
+            <div class="confirmacao__prazo">
+                <span>Prazo de entrega estimado:</span>
+                <strong>20 – 60 minutos</strong>
+            </div>
+
+            <a href="index.php" class="confirmacao__btn">Voltar ao início</a>
+        </div>
+    </main>
 
     <footer class="footer">
         <div class="footer_superior">
@@ -66,18 +59,14 @@
                 <img src="assets/forno 1 (Traced).svg" alt="">
                 <p>La Forno</p>
             </div>
-
             <div class="line"><img src="assets/line-xl-svgrepo-com.svg" alt=""></div>
-
             <div class="footer__superior__informacoes">
                 <p>Email: tropadapizza@gmail.com</p>
                 <p>Localização: Botafogo é bairro</p>
             </div>
-
             <div class="line"><img src="assets/line-xl-svgrepo-com.svg" alt=""></div>
-
             <div class="footer__superior__contatos">
-                <a href="assets/w0fu52c6a8t61.jpg"><img src="assets/whatsapp-svgrepo-com.svg" alt=""></a>
+                <a href="#"><img src="assets/whatsapp-svgrepo-com.svg" alt=""></a>
                 <a href="#"><img src="assets/instagram-svgrepo-com.svg" alt=""></a>
             </div>
         </div>
@@ -85,14 +74,7 @@
             <h3>Desenvolvido por: Gabriel Araújo, Thiago Marlon, Davi Costa e Felipe Carnot</h3>
         </div>
     </footer>
-<script>
-(function() {
-    var c = JSON.parse(localStorage.getItem('carrinho')) || [];
-    var t = 0;
-    for (var i = 0; i < c.length; i++) t += c[i].quantidade;
-    var el = document.getElementById('carrinho-contador');
-    if (el && t > 0) { el.textContent = t; el.style.display = 'flex'; }
-})();
-</script>
+
+    <script src="scripts/confirmacao_pedido.js"></script>
 </body>
 </html>

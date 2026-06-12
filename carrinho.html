@@ -22,16 +22,32 @@
                 <li class="cabecalho__navbar__lista__item"><a href="contato.php">Contato</a></li>
             </ul>
         </nav>
-        <a class="cabecalho__carrinho" href="carrinho.html"><img src="assets/carrinho.svg" alt=""></a>
+        <a class="cabecalho__carrinho" href="carrinho.html">
+            <img src="assets/carrinho.svg" alt="">
+            <span class="carrinho__contador" id="carrinho-contador"></span>
+        </a>
     </header>
 
     <main class="carrinho">
         <h2>Meu Carrinho</h2>
         <div id="lista-carrinho"></div>
         <p class="carrinho__total">Total: R$ <span id="total-carrinho">0,00</span></p>
-        <button id="limpar-carrinho">Limpar carrinho</button>
+        <div class="carrinho__botoes">
+            <button id="limpar-carrinho">Limpar carrinho</button>
+            <button id="ir-pagamento">Ir para pagamento</button>
+        </div>
     </main>
 
     <script src="scripts/carrinho.js"></script>
+    <script>
+        document.getElementById('ir-pagamento').addEventListener('click', function() {
+            var carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            if (carrinho.length === 0) {
+                alert('Adicione itens ao carrinho antes de continuar!');
+                return;
+            }
+            window.location.href = 'pagamento.html';
+        });
+    </script>
 </body>
 </html>

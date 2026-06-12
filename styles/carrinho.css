@@ -26,8 +26,22 @@
     margin: 1em 0;
 }
 
+.carrinho__botoes {
+    display: flex;
+    gap: 1em;
+}
+
 #limpar-carrinho {
     background-color: var(--vermelho-principal);
+    border: none;
+    border-radius: 20px;
+    color: var(--texto-branco);
+    cursor: pointer;
+    padding: 0.8em 1.2em;
+}
+
+#ir-pagamento {
+    background-color: var(--texto-verde);
     border: none;
     border-radius: 20px;
     color: var(--texto-branco);

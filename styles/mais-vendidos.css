@@ -42,11 +42,26 @@
 
 .vendidos__produtos__card__quantidade {
     display: flex;
-    gap: 5px;
+    gap: 8px;
+    align-items: center;
 }
 
 .vendidos__produtos__card__quantidade img {
     width: 10px;
+}
+
+.vendidos__produtos__card__quantidade button {
+    background-color: var(--vermelho-principal);
+    color: var(--texto-branco);
+    border: none;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    line-height: 1;
 }
 
 .vendidos__produtos__card__link {

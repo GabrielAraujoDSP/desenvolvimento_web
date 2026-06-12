@@ -37,7 +37,10 @@ if (!isset($_SESSION['usuario_id'])) {
                 </li>
             </ul>
         </nav>
-        <a class="cabecalho__carrinho" href="#"><img src="assets/carrinho.svg" alt=""></a>
+        <a class="cabecalho__carrinho" href="carrinho.html">
+            <img src="assets/carrinho.svg" alt="">
+            <span class="carrinho__contador" id="carrinho-contador"></span>
+        </a>
     </header>
 
     <!-- Conteúdo do perfil -->
@@ -71,6 +74,14 @@ if (!isset($_SESSION['usuario_id'])) {
             <h3>Desenvolvido por: Gabriel Araújo, Thiago Marlon, Davi Costa e Felipe Carnot</h3>
         </div>
     </footer>
-
+<script>
+(function() {
+    var c = JSON.parse(localStorage.getItem('carrinho')) || [];
+    var t = 0;
+    for (var i = 0; i < c.length; i++) t += c[i].quantidade;
+    var el = document.getElementById('carrinho-contador');
+    if (el && t > 0) { el.textContent = t; el.style.display = 'flex'; }
+})();
+</script>
 </body>
 </html>
