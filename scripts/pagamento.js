@@ -113,7 +113,8 @@ function confirmarPagamento() {
             logradouro: logradouro,
             numero: numero,
             complemento: complemento,
-            cidade: cidade
+            cidade: cidade,
+            cep: document.getElementById('cep').value.replace(/\D/g, '')
         },
         total: total
     };

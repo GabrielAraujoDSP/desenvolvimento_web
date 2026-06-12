@@ -21,3 +21,9 @@ for (var i = 0; i < dados.itens.length; i++) {
 document.getElementById('conf-total').textContent = dados.total.toFixed(2).replace('.', ',');
 
 localStorage.removeItem('pedido_confirmado');
+
+fetch('server/salvar_pedido.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(dados)
+});
