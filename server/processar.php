@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bind_param("sss", $nome, $email, $mensagem);
         $stmt->execute();
 
-        header('location: /desenvolvimento_web/contato.html?sucesso=1#contato');
+        header('location: /desenvolvimento_web/contato.php?sucesso=1#contato');
         exit;
     }
 
